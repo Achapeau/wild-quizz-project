@@ -7,26 +7,28 @@
 }
 
 * {
-    padding: 0;
-    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
+    margin: 0;
+    line-height: 1.5;
     background-color: var(--backgroung-color);
 }
 
-header {
+nav {
     background-color: var(--header-color);
     padding: 10px;
-    /* height: 20px; */
     display: flex;
     justify-content: space-between;
+    margin: 0;
 }
 
 main {
     display: grid;
     grid-template-columns: 1fr;
     padding-bottom: 20px;
+    margin: 20px;
 }
 
 .question {
@@ -34,7 +36,7 @@ main {
     text-align: center;
     align-items: center;
     border: 2px black solid;
-    margin: 20px;
+    margin-bottom: 20px;
     padding: 20px;
     background-color: var(--questions-color);
     border-radius: 15px;
@@ -42,11 +44,11 @@ main {
 
 .question h1 {
     padding-bottom: 5px;
-    font-size: 5em;
+    font-size: clamp(3.5rem, 5vw, 6rem)
 }
 
 .question p {
-    font-size: 2em;
+    font-size: clamp(1.5rem, 5vw, 3rem);
 }
 
 .buttons {
