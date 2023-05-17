@@ -30,7 +30,7 @@ header {
     background-color: var(--header-color);
 }
 
-.logo{
+.logo {
     max-width: 80px;
     max-height: 40px;
     }
@@ -84,15 +84,8 @@ footer {
     font-size: 14px;
   }
 
-#footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-
 @media screen and (min-width: 640px) {
-    main {
+    .quizz-main {
         margin: 30px 100px 30px 100px;
     }
 
