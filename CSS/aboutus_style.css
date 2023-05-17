@@ -14,7 +14,17 @@
 
 body {
     background-color: var(--background-color);
+  }
 
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    background-color: #2d2d2d;
+    }
+    
 /* Burger menu */
   .burgerMenu {
     height: 100%;
@@ -77,7 +87,7 @@ body {
 
   .aboutusarticles > h1 { 
     text-align: center;
-    
+
   }
   footer {
     position: fixed;
@@ -90,4 +100,3 @@ body {
     text-align: center;
   }
 
-}
