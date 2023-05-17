@@ -1,5 +1,5 @@
 :root {
-    --backgroung-color : #0F4271;
+    --background-color : #0F4271;
     --header-color : #444144 ;
     --footer-color : #444144;
     --buttons-color : #EFC762;
@@ -13,7 +13,7 @@
 body {
     margin: 0;
     line-height: 1.5;
-    background-color: var(--backgroung-color);
+    background-color: var(--background-color);
     font-family: Roboto, "Segoe UI", Tahoma, sans-serif; 
 } 
 
