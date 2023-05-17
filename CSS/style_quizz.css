@@ -50,24 +50,6 @@
     min-height: fit-content;
 }
 
-<<<<<<< HEAD
-=======
-footer {
-    background-color: var(--footer-color);
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    font-size: 14px;
-  }
-/*
-#footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-*/
-
->>>>>>> 8c990abee7c38708acc1affb58fe6c3337e39235
 @media screen and (min-width: 640px) {
     .quizz-main {
         margin: 30px 100px 30px 100px;
