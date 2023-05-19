@@ -63,7 +63,7 @@ header {
         top: 60px;
         right: 0;
         left: 0;
-        background-color: #2d2d2d;
+        background-color: var(--footer-color);
         padding: 10px;
         z-index: 1;
         text-align: center;
@@ -71,7 +71,7 @@ header {
     
       .menu-dropdown a {
         display: block;
-        color: #fff;
+        color: var(--burger-menu-color);
         text-decoration: none;
         padding: 5px;
         
@@ -99,7 +99,7 @@ header {
       display: block;
       width: 35px;
       height: 5px;
-      background-color: black;
+      background-color: var(--header-color);
       margin: 6px 0;
     }
 
