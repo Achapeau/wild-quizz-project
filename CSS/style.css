@@ -11,7 +11,7 @@
     --text-font-color: #f2f2f2;
     --burger-menu-color: #f2f2f2;
 }
-
+/* General properties */
 * { 
     font-family: var(--font-family);
     margin: 0;
@@ -22,14 +22,18 @@ a {
     text-decoration: none;
     color: var(--text-font-color);
 }
-/* Styles header */
+
+
+
 body {
     background-image: var(--background-img);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    text-shadow: 2px 2px 5px rgba(7, 5, 37, 0.763);
+    text-shadow: -2px -2px 5px rgba(7, 5, 37, 0.763);
 }
-
+/* Styles header */
 header {
     display: flex;
     justify-content: space-between;
@@ -54,10 +58,10 @@ header {
         border: 0px;
         color: var(--burger-menu-color);
         cursor: pointer;
-    }
-    
+    } 
+
     /* Styles du menu déroulant */
-    
+     
     .menu-dropdown {
         display: none;
         position: absolute;
@@ -82,7 +86,7 @@ header {
         background-color: darkgray;
     
     }
-    
+     
     
   
     
@@ -103,5 +107,29 @@ header {
         text-align: center;
         font-size: 14px;
         margin: 0;
-        width: 99%;
+        width: 100%;
       }
+
+    @media screen and (min-width: 640px) {
+        header {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            }
+       
+        .menu-burger {
+        display: none;
+        } 
+
+        .menu-dropdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            width: 85%;
+            position: relative;
+            top: 0;
+                     
+            
+        }
+
+    }
