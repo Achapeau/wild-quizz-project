@@ -108,6 +108,7 @@ header {
         font-size: 14px;
         margin: 0;
         width: 100%;
+<<<<<<< HEAD
       }
 
     @media screen and (min-width: 640px) {
@@ -133,3 +134,6 @@ header {
         }
 
     }
+=======
+      }
+>>>>>>> e8d05846043c3bf414d7fcf886f8662e0e52bc48
