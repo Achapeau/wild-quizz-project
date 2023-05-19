@@ -1,11 +1,6 @@
 .quizz-body {
-    margin: 0;
     line-height: 1.5;
-    background-image: var(--background-img);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    font-family: var(--font-family)
+    text-shadow: none;
 } 
 
 
