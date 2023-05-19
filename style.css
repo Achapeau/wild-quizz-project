@@ -1,0 +1,43 @@
+/* mobile first */
+
+* {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+header {
+    background-color: #444144;
+    height: 3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo {
+    background-image: url("logo-v1.jpeg");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* For largest screen 
+@media screen and (min-width: 900px) {
+    
+}
