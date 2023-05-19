@@ -56,7 +56,7 @@ h1 {
     align-items: center;
     font-size: clamp(.5em, 5vw, 2em);
     margin: 5vh 5vw 10vh 5vw;
-    padding: 1.5em;
+    padding: 3em;
 }
 
 p {
