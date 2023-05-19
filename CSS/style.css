@@ -37,9 +37,10 @@ header {
     height: 60px;
     padding: 0 20px;
     background-color: var(--header-color);
-    
-    
+    align-self: flex-end;
+    width: 100vw;
     }
+
     
     .logo {
     width: 80px;
@@ -82,16 +83,7 @@ header {
     
     }
     
-    header {
-      align-self: flex-end;
-      display: flex;
-      justify-content: space-between;
-      height: 60px;
-      padding: 0 20px;
-      background-color: var(--header-color);
-      width: 100vw;
-      }
-  
+    
   
     
     /* Icône burger */
