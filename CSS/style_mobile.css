@@ -1,72 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Styles header */
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-  padding: 0 20px;
-  background-color: #2d2d2d;
-}
-
-.logo {
-  width: 80px;
-  height: 40px;
-}
-
-.menu-burger {
-  background-color: #2d2d2d;
-  height: auto;
-  width: 60px;
-  border: 0px;
-  color: white;
-  cursor: pointer;
-}
-
-/* Styles du menu déroulant */
-
-.menu-dropdown {
-  display: none;
-  position: absolute;
-  top: 60px;
-  right: 0;
-  left: 0;
-  background-color: #2d2d2d;
-  padding: 10px;
-  z-index: 1;
-  text-align: center;
-}
-
-.menu-dropdown a {
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  padding: 5px;
-}
-
-.menu-dropdown a:hover {
-  background-color: darkgray;
-}
-
-/* Styles partie principale */
-
-main {
-  background-image: url(../img/codioful.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 0px 20px 0px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  min-height: calc(100vh - 97px);
-}
 
 /* Styles bouton */
 
@@ -117,17 +48,6 @@ main {
   width: 100%;
   height: 60px;
   margin-top: 20px;
-}
-
-/* Styles du footer */
-
-footer {
-  background-color: #2d2d2d;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-  font-size: 14px;
-  margin: 0;
 }
 
 /* Contact */

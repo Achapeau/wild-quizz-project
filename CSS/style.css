@@ -21,11 +21,17 @@
 a {
     text-decoration: none;
     color: var(--text-font-color);
+    
 }
 
 
 
 body {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 100vh;
     background-image: var(--background-img);
     background-size: cover;
     background-repeat: no-repeat;
@@ -33,15 +39,19 @@ body {
     text-shadow: 2px 2px 5px rgba(7, 5, 37, 0.763);
     text-shadow: -2px -2px 5px rgba(7, 5, 37, 0.763);
 }
+
+
+
 /* Styles header */
 header {
+    justify-self: flex-start;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 60px;
     padding: 0 20px;
     background-color: var(--header-color);
-    align-self: flex-end;
+    
     width: 100vw;
     }
 
@@ -91,6 +101,7 @@ header {
   
     
     /* Icône burger */
+
     .burger-icon span {
       display: block;
       width: 35px;
@@ -99,8 +110,10 @@ header {
       margin: 6px 0;
     }
 
+    /* Style footer */
+
     footer {
-        align-self: flex-end;
+        justify-self: flex-end;
         background-color: var(--footer-color);
         color: var(--text-font-color);
         padding: 10px;
@@ -131,5 +144,15 @@ header {
                      
             
         }
+
+        .quizz-main {
+            margin: 30px 100px 30px 100px;
+        }
+    
+        
+        .question p {
+                font-size: clamp(2rem, 4vw, 3rem);
+            }
+         
 
     }
