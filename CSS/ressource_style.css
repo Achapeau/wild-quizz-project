@@ -3,11 +3,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
+} 
 
 main a {
     color:rgb(0, 255, 60);
-}
+} 
 
 .ressource-main {
     padding-bottom: 2.5rem;
