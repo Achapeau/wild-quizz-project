@@ -152,13 +152,6 @@
 
     /* Page Contact */
 
-    .contact-form {
-        width: 80vw;
-        margin-top: 5vh;
-        margin-left: 10vw;
-        min-height: 60vh;
-      }
-      
       .contact-form form {
         margin-top: 5vh;
         
