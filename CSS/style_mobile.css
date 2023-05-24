@@ -103,6 +103,7 @@ header {
 }
 
 .menu-dropdown a:hover {
+  cursor: pointer;
   background-color: darkgray;
 
 }
@@ -260,7 +261,15 @@ footer {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 10px ;
-}
+  }
+
+.answers button:hover:not([disabled]){
+  background:linear-gradient(#922765, #4f174d, #1c061b, #eb2364); 
+  color: var(--text-font-color);
+  cursor:pointer;
+  transition: all 0.5s ease-out;
+};
+.answers button:disabled{cursor:no-drop;}
 
 .answers button {
   background-color: var(--buttons-color);
