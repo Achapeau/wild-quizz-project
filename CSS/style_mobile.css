@@ -238,6 +238,16 @@ footer {
   align-items: center;
 }
 
+.answer-btn:hover:not([disabled]){
+  background:linear-gradient(#922765, #4f174d, #1c061b, #eb2364); 
+  color: var(--text-font-color);
+  cursor:pointer;
+  transition: all 0.5s ease-out;
+}
+.answer-btn:disabled{
+  cursor: initial;
+}
+
 #answers {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -258,15 +268,6 @@ footer {
 .incorrect {background: red;}
     
 
-.answers button:hover:not([disabled]){
-  background:linear-gradient(#922765, #4f174d, #1c061b, #eb2364); 
-  color: var(--text-font-color);
-  cursor:pointer;
-  transition: all 0.5s ease-out;
-}
-.answers button:disabled{
-  cursor:no-drop;
-}
 
 
 /* Page résultats */
