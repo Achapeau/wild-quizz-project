@@ -558,7 +558,7 @@ function selectAnswer(e) {
     selectedBtn.classList.add("correct");
     // Et incrémentation du score
     score++;
-    console.log(score);
+    localStorage.setItem("score", score);
   } else {
     selectedBtn.classList.add("incorrect");
   }
@@ -579,14 +579,13 @@ function selectAnswer(e) {
 // un enregistrement du score dans le local storage.
 function showScore() {
   resetState();
-<<<<<<< HEAD
-  localStorage.setItem("right", score);
-  questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
-  nextButton.innerHTML = "Play again";
-=======
+
   // questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
   // nextButton.innerHTML = "Play again";
->>>>>>> 4c76ecbac525f9f2110e907173e170f1cdd4ce51
+  nextButton.addEventListener("click", function () {
+    document.location.href = "results.html";
+  });
+  nextButton.textContent = "Par ici pour les résultats!";
   nextButton.style.display = "block";
 }
 
