@@ -126,6 +126,10 @@ function selectAnswer(e) {
 // un enregistrement du score dans le local storage.
 function showScore() {
   resetState();
+  localStorage.getItem(
+    "right",
+    score
+  ); /* Envoie le score dans le localStorage */
   questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
   nextButton.innerHTML = "Play again";
   nextButton.style.display = "block";
