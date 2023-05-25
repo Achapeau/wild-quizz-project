@@ -187,14 +187,9 @@ footer {
   justify-content: space-between;
 }
 
-<<<<<<< HEAD
-.question {
-  grid-column: 1 / 3;
-=======
 
-#question {
+.question {
   grid-column : 1 / 3 ;
->>>>>>> 482dd758dacc781707d5b51491a5094dc18004bc
   text-align: center;
   align-items: center;
   border: 2px black solid;
@@ -247,9 +242,6 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-<<<<<<< HEAD
-  gap: 5px;
-=======
   gap: 10px ;
   }
 
@@ -274,7 +266,6 @@ footer {
 }
 .answers button:disabled{
   cursor:no-drop;
->>>>>>> 482dd758dacc781707d5b51491a5094dc18004bc
 }
 
 
