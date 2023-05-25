@@ -281,21 +281,6 @@ footer {
   cursor:no-drop;
 }
 
-.answers {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 5px ;
-
-}
-
-.answers button {
-  background-color: var(--buttons-color);
-  padding: 20px;
-  border-radius: 15px;
-  font-size: var(--inbox-text-font-size);
-  min-height: fit-content;
-}
 
 /* Page résultats */
 
