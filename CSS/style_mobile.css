@@ -366,7 +366,6 @@ h1 {
   text-shadow: none;
   background-color: var(--buttons-color);
   min-height: fit-content;
-  /* height: 1.5em; */
   width: fit-content;
   border-radius: 15px;
   display: flex;

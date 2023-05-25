@@ -475,11 +475,8 @@ let score = 0;
 //Déclaration variable qui indique quel est le tableau du thème choisi
 let questionArray = [];
 
-// Déclaration de la variable chosenTheme, qui va prendre la valeur du thème choisi sur la page Category
 let chosenTheme = localStorage.getItem(chosenTheme);
-// let chosenTheme = "darwin";
-
-// Fonction switch pour choisir le tableau correspondant au thème de la variable chosenTheme
+// let chosenTheme = "sport";
 switch (chosenTheme) {
   case "darwin":
     questionArray = questionsDarwin;
@@ -520,7 +517,7 @@ function showQuestion() {
   questionElement.innerHTML = `Question  ${questionNo} : ${currentQuestion.question}`;
 
   // Affichage des réponses dans chaque bouton "answer",
-  //  les classes HTML des boutons réponse ont actuellement tous des classes différentes,
+  //   dans notre cas les classes HTML des boutons réponse ont actuellement tous des classes différentes,
   // il faut les unifier (par exemple ici, ils ont tous la classe "Btn") pour utiliser forEach
   currentQuestion.answer.forEach((answer) => {
     const button = document.createElement("button");
@@ -542,7 +539,7 @@ function showQuestion() {
 function resetState() {
   // Si il y a un bouton pour skip, il est caché
   nextButton.style.display = "none";
-  nextButton.disabled = true;
+  // nextButton.disabled = true;
   // Supprimer les boutons déjà présents (avec le texte par défaut ou celui de la question précédente )
   while (answerButtons.firstChild) {
     answerButtons.removeChild(answerButtons.firstChild);
@@ -561,7 +558,7 @@ function selectAnswer(e) {
     selectedBtn.classList.add("correct");
     // Et incrémentation du score
     score++;
-    console.log(score);
+    localStorage.setItem("score", score);
   } else {
     selectedBtn.classList.add("incorrect");
   }
@@ -582,8 +579,13 @@ function selectAnswer(e) {
 // un enregistrement du score dans le local storage.
 function showScore() {
   resetState();
+
   // questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
   // nextButton.innerHTML = "Play again";
+  nextButton.addEventListener("click", function () {
+    document.location.href = "results.html";
+  });
+  nextButton.textContent = "Par ici pour les résultats!";
   nextButton.style.display = "block";
 }
 
