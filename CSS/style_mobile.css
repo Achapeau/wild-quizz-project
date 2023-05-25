@@ -331,6 +331,9 @@ h1 {
   color: var(--text-font-color);
   font-size: var(--text-font-size);
   border: 5px outset #f2f2f2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+ 
 }
 
 .position-classment {
@@ -363,7 +366,7 @@ h1 {
   text-shadow: none;
   background-color: var(--buttons-color);
   min-height: fit-content;
-  height: 1.5em;
+  /* height: 1.5em; */
   width: fit-content;
   border-radius: 15px;
   display: flex;
@@ -372,7 +375,7 @@ h1 {
   font-size: var(--inbox-text-font-size);
   font-weight: 500;
   margin: 5vh 5vw 10vh 5vw;
-  padding: 3em;
+  padding: 0.3em;
   border: 2px black solid;
 }
 
