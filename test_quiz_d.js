@@ -1,7 +1,11 @@
+console.log(document);
+
 // Liste des questions et réponses
+
 const questions = [
   {
-    question: "Que veulent dire les chiffres au fond des verres de cantine ?",
+    question:
+      "TEST        Que veulent dire les chiffres au fond des verres de cantine ?",
     answers: [
       "C’est l’âge que vous avez et le plus jeune va chercher l’eau",
       "C’est la note que vous aurez à l’interro de cet après-midi",
@@ -32,34 +36,45 @@ let questionIndex = 0;
 // Variables pour suivre l'état du quiz
 let currentQuestion = 1;
 
-// Afficher la première question au chargement de la page
-displayQuestion(0);
+const questionElement = document.getElementsByClassName("question");
+const answersElement = document.getElementsByClassName("answers");
 
-// Fonction pour afficher une question
+// Déclaration de fonction pour afficher une question
 function displayQuestion(questionIndex) {
-  const questionElement = document.querySelector(".question");
-  const answersElement = document.querySelector(".answers");
-
   // Afficher la question
-  questionElement.innerHTML = `<h1>Question ${questionIndex + 1}</h1>
-                                   <p>${questions[questionIndex].question}</p>`;
+  questionElement.createinnerHTML = `<h1>Question ${questionIndex + 1}</h1>
+  <p>${questions[questionIndex].question}</p>`;
 
   // Afficher les réponses
   answersElement.innerHTML = "";
   for (let i = 0; i < questions[questionIndex].answers.length; i++) {
     const answer = questions[questionIndex].answers[i];
     const button = document.createElement("button");
-    button.innerText = answer;
-    button.classList.add("answer");
-    answersElement.appendChild(button);
+    button.innerText = questions.answer;
+    button.classList.add("answer-btn");
+    answersElement.appendchild(button);
   }
+  // Déclaration de la fonction answerButtons, qui écoute les clics sur les boutons de réponse et appelle la fonction checkAnswer
+  const answerButtons = document.querySelectorAll(".answer");
+  answerButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      checkAnswer(index);
+    });
+  });
 }
 
-// Fonction pour vérifier la réponse sélectionnée
+// Déclaration de fonction pour vérifier la réponse sélectionnée
 function checkAnswer(selectedAnswer) {
   const questionIndex = currentQuestion - 1;
   const correctAnswerIndex = questions[questionIndex].correctAnswer;
 
+  // Colore la bonne réponse en vert, et désactive les boutons réponse
+  Array.from(answerButtons.children).forEach((button) => {
+    if (button.dataset.correct === "true") {
+      button.classList.add("correct");
+    }
+    button.disabled = true;
+  });
   if (selectedAnswer === correctAnswerIndex) {
     //if user selected option is equal to array's correct answer
     userScore += 1; //upgrading score value with 1
@@ -91,10 +106,5 @@ function checkAnswer(selectedAnswer) {
   }
 }
 
-// Écouter les clics sur les boutons de réponse
-const answerButtons = document.querySelectorAll(".answer");
-answerButtons.forEach((button, index) => {
-  button.addEventListener("click", () => {
-    checkAnswer(index);
-  });
-});
+// Afficher la première question au chargement de la page
+displayQuestion(0);

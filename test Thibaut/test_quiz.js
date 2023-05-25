@@ -4,10 +4,10 @@ const questions = [
   {
     question: "Intitulé question 1",
     answer: [
+      { text: "Right answer", correct: true },
       { text: "Wrong answer 1", correct: false },
       { text: "Wrong answer 2", correct: false },
       { text: "Wrong answer 3", correct: false },
-      { text: "Right answer", correct: true },
     ],
   },
 
@@ -15,9 +15,19 @@ const questions = [
     question: "Intitulé question 2",
     answer: [
       { text: "Wrong answer 1", correct: false },
+      { text: "Right answer", correct: true },
       { text: "Wrong answer 2", correct: false },
       { text: "Wrong answer 3", correct: false },
+    ],
+  },
+
+  {
+    question: "Intitulé question 3",
+    answer: [
+      { text: "Wrong answer 1", correct: false },
+      { text: "Wrong answer 2", correct: false },
       { text: "Right answer", correct: true },
+      { text: "Wrong answer 3", correct: false },
     ],
   },
 ];
@@ -51,9 +61,8 @@ function showQuestion() {
   let currentQuestion = questions[currentQuestionIndex];
   //  Déclaration de la variable questionNo, qui permet d'indiquer quel est le numéro de la question actuelle
   let questionNo = currentQuestionIndex + 1;
-  // Affiche le numéro de la question dans la classe question, à changer car on le veut dans le h1 de la classe question
-  // Et affiche la question dans le <p> de classe "question"
-  questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+  // Affiche le numéro de la question dans l'id question, suivi de la question
+  questionElement.innerHTML = `Question  ${questionNo} : ${currentQuestion.question}`;
 
   // Affichage des réponses dans chaque bouton "answer",
   //   dans notre cas les classes HTML des boutons réponse ont actuellement tous des classes différentes,
@@ -89,11 +98,14 @@ function selectAnswer(e) {
   // Ajout du bouton sur lequel on a cliqué dans une variable selectedBtn
   const selectedBtn = e.target;
   // vérification si dataset = true, donc si réponse correcte, ajout de la classe correct au selectedBtn, sinon ajout de la classe incorrect
+  const isCorrect = selectedBtn.dataset.correct === "true";
+  console.log(isCorrect);
   // Permet d'appliquer les couleurs verte et rouge sur les bontons réponses
   if (isCorrect) {
     selectedBtn.classList.add("correct");
     // Et incrémentation du score
     score++;
+    console.log(score);
   } else {
     selectedBtn.classList.add("incorrect");
   }
@@ -114,7 +126,7 @@ function selectAnswer(e) {
 // un enregistrement du score dans le local storage.
 function showScore() {
   resetState();
-  questionElement.innerHTML = "You scored ${score} out of ${questions.length}!";
+  questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
   nextButton.innerHTML = "Play again";
   nextButton.style.display = "block";
 }
@@ -125,16 +137,17 @@ function handleNextButton() {
   if (currentQuestionIndex < questions.length) {
     showQuestion();
   } else {
-    showscore();
+    showScore();
   }
 }
 
 //En cas de bouton pour skip, on clique dessus pour passer à la question suivante
 nextButton.addEventListener("click", () => {
-  if (currentQuestionIndex < questions.lenght) {
+  if (currentQuestionIndex < questions.length) {
     handleNextButton();
   } else {
     //Si la question actuelle est la dernière
+    console.log(`score final: ${score}`);
     startQuiz();
   }
 });
