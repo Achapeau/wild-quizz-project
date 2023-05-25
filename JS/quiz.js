@@ -1,9 +1,9 @@
 // import questionsSport from "../JS/questions.js";
-// const questionsDarwin = require("../JS/questions.js");
-// const questionsCinema = require("../JS/questions.js");
-// const questionsCultureG = require("../JS/questions.js");
-// const questionsSport = require("../JS/questions.js");
-// console.log(questionsDarwin);
+const questionsDarwin = require("../JS/questions.js");
+const questionsCinema = require("../JS/questions.js");
+const questionsCultureG = require("../JS/questions.js");
+const questionsSport = require("../JS/questions.js");
+console.log(questionsDarwin);
 
 let questions = [
   {
@@ -283,6 +283,7 @@ function selectAnswer(e) {
 // un enregistrement du score dans le local storage.
 function showScore() {
   resetState();
+  localStorage.setItem("right", score);
   questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
   nextButton.innerHTML = "Play again";
   nextButton.style.display = "block";
