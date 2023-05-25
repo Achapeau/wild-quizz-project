@@ -32,13 +32,10 @@
 
     <main>
       <div class="btn-container">
-        <a href="quizz.html"><button class="btn-start">Start QUIZZ</button></a>
-        <a href="category.html"><button class="btn-category">Thèmes</button></a>
-        <a href="results.html"
-          ><button class="btn-results">Résultats</button></a
-        >
-
-        <a href="contact.html"><button class="btn-contact">Contact</button></a>
+        <button class="btn-category">Cinéma</button>
+        <button class="btn-category">Culture G</button>
+        <button class="btn-category">Sport</button>
+        <button class="btn-category">Darwin Awards</button>
       </div>
     </main>
 
@@ -46,18 +43,6 @@
       <p>&copy 2023 WILD-QUIZZ. All rights reserved</p>
     </footer>
 
-    <script>
-      // Ajouter un événement de clic sur le menu burger pour afficher ou masquer le menu déroulant
-      document
-        .querySelector(".menu-burger")
-        .addEventListener("click", function () {
-          const menuDropdown = document.querySelector(".menu-dropdown");
-          if (menuDropdown.style.display === "none") {
-            menuDropdown.style.display = "block";
-          } else {
-            menuDropdown.style.display = "none";
-          }
-        });
-    </script>
+    <script src="JS/burgerMenu.js"></script>
   </body>
 </html>
