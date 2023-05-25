@@ -460,3 +460,10 @@ const questionsSport = [
     ],
   },
 ];
+
+// Export pour quiz.js
+
+module.exports = questionsDarwin;
+module.exports = questionsCinema;
+module.exports = questionsCultureG;
+module.exports = questionsSport;

@@ -187,8 +187,14 @@ footer {
   justify-content: space-between;
 }
 
+<<<<<<< HEAD
 .question {
   grid-column: 1 / 3;
+=======
+
+#question {
+  grid-column : 1 / 3 ;
+>>>>>>> 482dd758dacc781707d5b51491a5094dc18004bc
   text-align: center;
   align-items: center;
   border: 2px black solid;
@@ -197,32 +203,80 @@ footer {
   background-color: var(--questions-color);
   border-radius: 15px;
   min-height: fit-content;
-}
-
-.question h1 {
   padding: 5px;
   color: black;
-  font-size: var(--title-font-size);
-}
-
-.question p {
   font-size: var(--inbox-text-font-size);
 }
 
-.answers {
+
+.timer {
+  color: var(--text-font-color);
+  margin: 4rem;  
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.timeLeftTxt {
+  font-weight: 400;
+  font-size: calc(2* (var(--text-font-size)));
+  margin: 0 2rem;
+  user-select: none;
+}
+
+.timerSec {
+  font-size: clamp(2rem, 5vw, 5rem);;
+  font-weight: 500;
+  min-width: 20vw;
+  min-height: 20vw;
+  width: auto;
+  height: auto;
+  color: var(--questions-color);
+  border-radius: 50%;
+  background-color: var(--footer-color);
+  border: 1px solid #343a40;
+  user-select: none;
+  margin: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#answers {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+<<<<<<< HEAD
   gap: 5px;
+=======
+  gap: 10px ;
+  }
+
+.answer-btn {
+    background-color: var(--buttons-color);
+    padding: 20px;
+    border-radius: 35px;
+    font-size: var(--inbox-text-font-size);
+    min-height: fit-content;
+  }
+    
+.correct {background: green;}
+    
+.incorrect {background: red;}
+    
+
+.answers button:hover:not([disabled]){
+  background:linear-gradient(#922765, #4f174d, #1c061b, #eb2364); 
+  color: var(--text-font-color);
+  cursor:pointer;
+  transition: all 0.5s ease-out;
+};
+.answers button:disabled{
+  cursor:no-drop;
+>>>>>>> 482dd758dacc781707d5b51491a5094dc18004bc
 }
 
-.answers button {
-  background-color: var(--buttons-color);
-  padding: 20px;
-  border-radius: 15px;
-  font-size: var(--inbox-text-font-size);
-  min-height: fit-content;
-}
 
 /* Page résultats */
 
