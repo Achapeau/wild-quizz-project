@@ -2,7 +2,7 @@
     
     /* Styles généraux*/
     
-
+    
     /* Styles header */
     header {
         display: flex;
@@ -58,7 +58,7 @@
         }
     
     
-    /* .quizz-main {
+    .quizz-main {
             padding-bottom: 2.5rem;
             margin: 20px 10px 20px 10px ;
             min-height: calc(100vh - 97px);
@@ -66,8 +66,8 @@
             flex-direction: column;
             justify-content: space-around;
           }
-           */
-          /* .question {
+          
+          .question {
             grid-column : 1 / 3 ;
             text-align: center;
             align-items: center;
@@ -77,23 +77,23 @@
             background-color: var(--questions-color);
             border-radius: 15px;
             min-height: fit-content;
-          } */
+          }
           
-          /* .question h1 {
+          .question h1 {
             padding: 5px;
             font-size: var(--title-font-size);
-          } */
+          }
           
           .question p {
             font-size: calc(1.5 *var(--inbox-text-font-size));
           }
           
-          /* .answers {
+          .answers {
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
             gap: 25px ;
-          } */
+          }
           
           .answers button {
             background-color: var(--buttons-color);
@@ -115,23 +115,30 @@
     }
     .logo {
         width: auto;
-    }
+    }/*
     .results-main {
         display: flex;
-        flex-direction: column;
+        flex-direction: unset;
         justify-content: space-between;
         align-items: center;
 
-    } 
+    } */
+    .results-main {
+      justify-content: center;
+    }
+    .score-title {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
     
     #results {
-        font-size: calc(1.5 * var(--title-font-size));
+        font-size: calc(1.2 * var(--title-font-size));
         margin: 3%;
-        width: 10vw;
-        height: 20vh;
-        padding: 10%;
-        min-width: fit-content;
-        min-height: fit-content;
+        min-width: 390px;
+        min-height: 390px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     
@@ -214,6 +221,22 @@
         font-size: 1.5rem;
       }
 
+@media screen and (min-width: 1200px) {
+
+  .results-main{
+    display: flex;
+    flex-direction: row;
+    margin-right: 2rem;
+
+  }
+  .visual-array {
+    width: 25%;
+  }
+  
+  .desktop-results {
+    width: 45%
+  }
+}
 
 
 

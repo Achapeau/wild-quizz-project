@@ -243,7 +243,7 @@ function showQuestion() {
 function resetState() {
   // Si il y a un bouton pour skip, il est caché
   nextButton.style.display = "none";
-  nextButton.disabled = true;
+  // nextButton.disabled = true;
   // Supprimer les boutons déjà présents (avec le texte par défaut ou celui de la question précédente )
   while (answerButtons.firstChild) {
     answerButtons.removeChild(answerButtons.firstChild);
@@ -283,10 +283,6 @@ function selectAnswer(e) {
 // un enregistrement du score dans le local storage.
 function showScore() {
   resetState();
-  localStorage.getItem(
-    "right",
-    score
-  ); /* Envoie le score dans le localStorage */
   questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
   nextButton.innerHTML = "Play again";
   nextButton.style.display = "block";
