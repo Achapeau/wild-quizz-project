@@ -1,403 +1,462 @@
-let questionsDarwin = [
+const questionsDarwin = [
   {
-    numb: 1,
     question:
       "Comment Garry Holy, un homme de 39 ans, est-il tombé du 24ème étage d'un immeuble ?",
-    answer:
-      "Il a donné un coup d'épaule dans la vitre du 24ème étage pour prouver sa solidité à son entourage",
-    options: [
-      "Il s'est pris pour Superman",
-      "Il a donné un coup d'épaule dans la vitre du 24ème étage pour prouver sa solidité à son entourage",
-      "Il avait pris le pari qu'il ne mourrait pas en sautant de cette hauteur",
-      "Il a cru qu'il s'était transformé en oiseau",
+    answer: [
+      { text: "Il s'est pris pour Superman", correct: false },
+      {
+        text: "Il a donné un coup d'épaule dans la vitre du 24ème étage pour prouver sa solidité à son entourage",
+        correct: true,
+      },
+      {
+        text: "Il avait pris le pari qu'il ne mourrait pas en sautant de cette hauteur",
+        correct: false,
+      },
+      { text: "Il a cru qu'il s'était transformé en oiseau", correct: false },
     ],
   },
 
   {
-    numb: 2,
     question:
       "Comment un homme de 41 ans est-il mort à Détroit en essayant de ramasser ses clés de voiture dans la rue ?",
-    answer:
-      "Il est mort noyé en tentant de récupérer ses clefs dans une bouche d'égout, sa tête étant resté coincée entre les grilles de celle-ci ",
-    options: [
-      "Son porte-clefs était équipé d'explosifs qui ont explosé lorsqu'il l'a ramassé",
-      "Il est mort noyé en tentant de récupérer ses clefs dans une bouche d'égout, sa tête étant resté coincée entre les grilles de celle-ci ",
-      "Un homme lui a volé ses clefs lorsque celles-ci sont tombées. Notre malheureux a poursuivi le malfaiteur pour récupérer son bien, mais ce dernier l'a poignardé",
-      "Il a trébuché sur un caillou",
+    answer: [
+      {
+        text: "Son porte-clefs était équipé d'explosifs qui ont explosé lorsqu'il l'a ramassé",
+        correct: false,
+      },
+      {
+        text: "Un homme lui a volé ses clefs lorsque celles-ci sont tombées. Notre malheureux a poursuivi le malfaiteur pour récupérer son bien, mais ce dernier l'a poignardé",
+        correct: false,
+      },
+      {
+        text: "Il est mort noyé en tentant de récupérer ses clefs dans une bouche d'égout, sa tête étant resté coincée entre les grilles de celle-ci",
+        correct: true,
+      },
+      {
+        text: "Il a trébuché sur un caillou et une voiture lui a roulé dessus",
+        correct: false,
+      },
     ],
   },
 
   {
-    numb: 3,
     question:
-      " Après la mort d'un homme lors de son jogging quotidien, sa femme a déclaré qu'il faisait le vide dans sa tête lorsqu'il courait, et en effet ...",
-    answer: "Il a chuté dans un ravin de 60 mètres",
-    options: [
-      "Il n'a pas vu arriver le poteau en face de lui durant sa course",
-      "Il est entré en collision avec un TGV",
-      "Il a chuté dans un ravin de 60 mètres",
-      "Il s'est fait courser par un ours plus rapide que lui",
+      "Après la mort d'un homme lors de son jogging quotidien, sa femme a déclaré qu'il faisait le vide dans sa tête lorsqu'il courait, et en effet ...",
+    answer: [
+      {
+        text: "Il n'a pas vu arriver le poteau en face de lui durant sa course",
+        correct: false,
+      },
+      { text: "Il est entré en collision avec un TGV", correct: false },
+      { text: "Il a chuté dans un ravin de 60 mètres", correct: true },
+      {
+        text: "Il s'est fait courser par un ours plus rapide que lui",
+        correct: false,
+      },
     ],
   },
 
   {
-    numb: 4,
     question:
-      " Un homme voulant pêcher sur un lac gelé en Alaska a eu la mauvaise idée de lancer un bâton de dynamite sur la glace pour la briser. Que s'est-il passé après le jet du bâton",
-    answer: " Son chien fidèle lui a rapporté le bâton de dynamite",
-    options: [
-      "Son chien fidèle lui a rapporté le bâton de dynamite",
-      "Il n'a pas lancé le bâton assez loin",
-      "La glace n'était pas assez solide et tout le lac s'est fissuré après l'explosion",
-      "L'explosion a déclenché une avalanche",
+      "Un homme voulant pêcher sur un lac gelé en Alaska a eu la mauvaise idée de lancer un bâton de dynamite sur la glace pour la briser. Que s'est-il passé après le jet du bâton",
+    answer: [
+      {
+        text: "Son chien fidèle lui a rapporté le bâton de dynamite",
+        correct: true,
+      },
+      { text: "Il n'a pas lancé le bâton assez loin", correct: false },
+      {
+        text: "La glace n'était pas assez solide et tout le lac s'est fissuré après l'explosion",
+        correct: false,
+      },
+      { text: "L'explosion a déclenché une avalanche", correct: false },
     ],
   },
 
   {
-    numb: 5,
     question:
       "Faites attention en faisant le ménage... qu'à utilisée une femme pour nettoyer les toiles d'araignées dans sa cave au lieu d'un traditionnel balai ?",
-    answer: "Une torche enflammée qui a mis feu à sa maison",
-    options: [
-      "Un tuyau d'arrosage qu'elle n'a pas pu arrêter : elle est morte noyée",
-      "Une torche enflammée qui a mis feu à sa maison",
-      "Un souffleur de feuilles utilisé normalement en extérieur et qui a exploser durant son ménage",
-      "Elle a acheté un python qui a préférer la manger elle que les araignées",
+    answer: [
+      {
+        text: "Un tuyau d'arrosage qu'elle n'a pas pu arrêter : elle est morte noyée",
+        correct: false,
+      },
+      { text: "Une torche enflammée qui a mis feu à sa maison", correct: true },
+      {
+        text: "Un souffleur de feuilles utilisé normalement en extérieur et qui a exploser durant son ménage",
+        correct: false,
+      },
+      {
+        text: "Elle a acheté un python qui a préférer la manger elle que les araignéese",
+        correct: false,
+      },
     ],
   },
 
   {
-    numb: 6,
     question:
       "Où s'est installé un jeune homme après une soirée bien arrosée lui causant la mort le lendemain matin au Luxembourg ?",
-    answer:
-      "Dans une benne à ordure, le lendemain il a terminé dans le broyeur du camion des éboueurs",
-    options: [
-      "Sur un rail de train, le lendemain logiquement un train est passé",
-      "Sur un container dans un bateau, le lendemain le container est tombé du bateau entraînant ainsi le malheureux voyageur",
-      "Dans une benne à ordure, le lendemain il a terminé dans le broyeur du camion des éboueurs",
-      "Chez son ex",
+    answer: [
+      {
+        text: "Sur un rail de train, le lendemain logiquement un train est passé",
+        correct: false,
+      },
+      {
+        text: "Sur un container dans un bateau, le lendemain le container est tombé du bateau entraînant ainsi le malheureux voyageur",
+        correct: false,
+      },
+      {
+        text: "Dans une benne à ordure, le lendemain il a terminé dans le broyeur du camion des éboueurs",
+        correct: true,
+      },
+      { text: "Chez son ex", correct: false },
     ],
   },
 
   {
-    numb: 7,
-    question:
-      "Surement la mort la plus ridicule pour un personnage historique, cela se passe en 1498, comment est mort le roi de France Charles VIII ?",
-    answer:
-      "Il meurt après avoir heurté un linteau de porte au château d'Amboise",
-    options: [
-      "Il meurt après avoir heurté un linteau de porte au château d'Amboise",
-      "Il chute de la fenêtre de sa chambre en voulant remettre ses rideaux en place",
-      "Il s'étouffe avec un raisin lors d'un repas destiné à fêter son anniversaire",
-      "Il est tombé de son cheval",
-    ],
-  },
-
-  {
-    numb: 8,
     question:
       "Comment est mort l'astronome danois Tycho Brahe créant ainsi l'expression 'Je ne veux pas mourir comme Tycho Brahe' au Danemark ?",
-    answer:
-      "Il serait mort d'un calcul après s'être retenu trop longtemps d'uriner durant un long trajet : l'expression prétextant donc une envie pressante",
-    options: [
-      "Il serait mort en buvant trop d'eau : l'expression étant donc utilisé lors d'apéritifs pour faire comprendre qu'un convive ne prendra pas d'eau",
-      "Il serait mort d'un calcul après s'être retenu trop longtemps d'uriner durant un long trajet : l'expression prétextant donc une envie pressante",
-      "Il serait mort en mangeant trop lors d'un festin : l'expression signifiant donc 'j'arrête de manger' lors d'un repas",
-      "Il serait mort en jouant à la pétanque : l'expression signifiant donc 'Tu tires ou tu pointes?'",
+    answer: [
+      {
+        text: "Il serait mort en buvant trop d'eau : l'expression étant donc utilisé lors d'apéritifs pour faire comprendre qu'un convive ne prendra pas d'eau",
+        correct: false,
+      },
+      {
+        text: "Il serait mort d'un calcul après s'être retenu trop longtemps d'uriner durant un long trajet : l'expression prétextant donc une envie pressante",
+        correct: true,
+      },
+      {
+        text: "Il serait mort en mangeant trop lors d'un festin : l'expression signifiant donc 'j'arrête de manger' lors d'un repas",
+        correct: false,
+      },
+      {
+        text: "Il serait mort en jouant à la pétanque : l'expression signifiant donc 'Tu tires ou tu pointes?'",
+        correct: false,
+      },
     ],
   },
 
   {
-    numb: 9,
     question:
       "Comment Robert Puelo est-il mort après avoir volé un hot-dog sur un marché ?",
-    answer:
-      "Il s'est étouffé avec la saucisse et le SAMU n'a pas pu le ranimer",
-    options: [
-      "Il s'est étouffé avec la saucisse et le SAMU n'a pas pu le ranimer",
-      "Il s'est fait tirer dessus par le vendeur de hot-dogs",
-      "Il a fait tomber son butin et a glissé dessus. La chute lui a été fatale",
-      "Il s'est fait tuer par un SDF qui avait faim",
+    answer: [
+      {
+        text: "Il s'est étouffé avec la saucisse et le SAMU n'a pas pu le ranimer",
+        correct: true,
+      },
+      {
+        text: "Il s'est fait tirer dessus par le vendeur de hot-dogs",
+        correct: false,
+      },
+      {
+        text: "Il a fait tomber son butin et a glissé dessus. La chute lui a été fatale",
+        correct: false,
+      },
+      { text: "Il s'est fait tuer par un SDF qui avait faim", correct: false },
     ],
   },
 
   {
-    numb: 10,
     question:
       "Quel record du monde un révérend brésilien a-t-il voulu battre, mais qui lui a finalement coûté la vie ?",
-    answer:
-      "Le record du plus long vol accroché à des ballons de baudruche. Il fut retrouvé mort trois mois après son décollage sur la côte brésilienne.",
-    options: [
-      "Le record du nombre d'heures sans se nourrir",
-      "Le record du plus long vol accroché à des ballons de baudruche. Il fut retrouvé mort trois mois après son décollage sur la côte brésilienne.",
-      "Il a voulu organiser une messe dans le désert. Il est mort de déshydratation",
-      "Le record de celui qui mange le plus de cornichons en moins de 30 minutes",
+    answer: [
+      { text: "Le record du nombre d'heures sans se nourrir", correct: false },
+      {
+        text: "Il a voulu organiser une messe dans le désert. Il est mort de déshydratation",
+        correct: false,
+      },
+      {
+        text: "Le record de celui qui mange le plus de cornichons en moins de 30 minutes",
+        correct: false,
+      },
+      {
+        text: "Le record du plus long vol accroché à des ballons de baudruche. Il fut retrouvé mort trois mois après son décollage sur la côte brésilienne.",
+        correct: true,
+      },
     ],
   },
 ];
 
-let questionsCinema = [
+const questionsCinema = [
   {
-    numb: 1,
     question: "Qui joue le fameux soldat Ryan dans le film éponyme ?",
-    answer: "Matt Damon",
-    options: ["Vin Diesel", "Tom Hanks", "Jude Law", "Matt Damon"],
+    answer: [
+      { text: "Matt Damon", correct: true },
+      { text: "Vin Diesel", correct: false },
+      { text: "Tom Hanks", correct: false },
+      { text: "Jude Law", correct: false },
+    ],
   },
 
   {
-    numb: 2,
     question: "Quelle actrice joue le rôle d’Hermione Granger ?",
-    answer: "Emma Watson",
-    options: ["Evanna Lynch", "Bonnie Wright", "Emma Watson", "Emma Thompson"],
+    answer: [
+      { text: "Evanna Lynch", correct: false },
+      { text: "Bonnie Wright", correct: false },
+      { text: "Emma Watson", correct: true },
+      { text: "Emma Thompson", correct: false },
+    ],
   },
 
   {
-    numb: 3,
     question: "A quelle maison appartient Drago Malefoy ?",
-    answer: "Serpentard",
-    options: ["Serdaigle", "Gryffondor", "Poufsouffle", "Serpendard"],
+    answer: [
+      { text: "Gryffondor", correct: false },
+      { text: "Poufsouffle", correct: false },
+      { text: "Serdaigle", correct: false },
+      { text: "Serpentard", correct: true },
+    ],
   },
 
   {
-    numb: 4,
     question: "Quel acteur incarne Scarface dans le film de Brian de Palma ?",
-    answer: "Al Pacino",
-    options: ["Robert de Niro", "Martin Sheen", "Kevin Bacon", "Al Pacino"],
+    answer: [
+      { text: "Robert de Niro", correct: false },
+      { text: "Martin Sheen", correct: false },
+      { text: "Kevin Bacon", correct: false },
+      { text: "Al Pacino", correct: true },
+    ],
   },
 
   {
-    numb: 5,
     question: "Dans la saga Star Wars, qui est le père de Luke Skywalker ?",
-    answer: "Dark Vador",
-    options: ["Dark Sidious", "Obi-Wan Kenobi", "Dark Vador", "Chewbacca"],
+    answer: [
+      { text: "Dark Sidious", correct: false },
+      { text: "Chewbacca", correct: false },
+      { text: "Dark Vador", correct: true },
+      { text: "Obi-Wan Kenobi", correct: false },
+    ],
   },
 
   {
-    numb: 6,
     question:
-      " Dans combien de films, Johnny Depp incarne-t-il Jack Sparrow dans la saga Pirates des Caraïbes ?",
-    answer: "5 films",
-    options: ["3 films", "4 films", "5 films", "6 films"],
+      "Dans combien de films, Johnny Depp incarne-t-il Jack Sparrow dans la saga Pirates des Caraïbes ?",
+    answer: [
+      { text: "3 films", correct: false },
+      { text: "4 films", correct: false },
+      { text: "5 films", correct: true },
+      { text: "6 films", correct: false },
+    ],
   },
 
   {
-    numb: 7,
     question:
       "Quel est le nom du petit monstre gentil, héros du film Les Gremlins ?",
-    answer: "Guizmo",
-    options: ["Guizmo", "Willow", "Tobby", "Dobby"],
+    answer: [
+      { text: "Guizmo", correct: false },
+      { text: "Willow", correct: false },
+      { text: "Dobby", correct: false },
+      { text: "Tobby", correct: true },
+    ],
   },
 
   {
-    numb: 8,
     question:
       "Quelle actrice incarne Mary Jane Watson dans la trilogie Spider-Man ?",
-    answer: "Kirsten Dunst",
-    options: ["Cate Blanchett", "Emma Stone", "Zendaya", "Kirsten Dunst"],
-  },
-
-  {
-    numb: 9,
-    question: "Qui a réalisé le film 'Forrest Gump' ?",
-    answer: "Robert Zemeckis",
-    options: [
-      "Robert Zemeckis",
-      "Tom Hanks",
-      "Les frères Cohen",
-      "James Cameron",
+    answer: [
+      { text: "Kirsten Dunst", correct: true },
+      { text: "Emma Stone", correct: false },
+      { text: "Zendaya", correct: false },
+      { text: "Cate Blanchett", correct: false },
     ],
   },
 
   {
-    numb: 10,
+    question: "Qui a réalisé le film 'Forrest Gump' ?",
+    answer: [
+      { text: "Tom Hanks", correct: false },
+      { text: "Les frères Cohen", correct: false },
+      { text: "Robert Zemeckis", correct: true },
+      { text: "James Cameron", correct: false },
+    ],
+  },
+
+  {
     question:
       "Quel acteur joue le rôle du gardien-chef Edgecomb dans le film 'La ligne verte' ?",
-    answer: "Tom Hanks",
-    options: ["Sam Rockwell", "Tom Hanks", "Michael Clarke", "David Morse"],
+    answer: [
+      { text: "Tom Hanks", correct: true },
+      { text: "Sam Rockwell", correct: false },
+      { text: "Michael Clarke", correct: false },
+      { text: "David Morse", correct: false },
+    ],
   },
 ];
 
-let questionsCultureG = [
+const questionsCultureG = [
   {
-    numb: 1,
     question: "Quel est le dessert préféré d’Homer Simpson ?",
-    answer: "Les donuts",
-    options: [
-      "Les éclairs au chocolat",
-      "Les donuts",
-      "Les brownies",
-      "Les gaufres à la vanille",
+    answer: [
+      { text: "Les éclairs au chocolat", correct: false },
+      { text: "Les donuts", correct: true },
+      { text: "Les brownies", correct: false },
+      { text: "Les gaufres à la vanille", correct: false },
     ],
   },
 
   {
-    numb: 2,
     question: "Quel groupe a interprété la chanson « I Gotta Feeling » ?",
-    answer: "Black Eyed Peas",
-    options: [
-      "Eminen",
-      "Red Hot Chili Peppers",
-      "Black Eyed Peas",
-      "Audioslave",
+    answer: [
+      { text: "Eminen", correct: false },
+      { text: "Red Hot Chili Peppers", correct: false },
+      { text: "Black Eyed Peas", correct: true },
+      { text: "Audioslave", correct: false },
     ],
   },
 
   {
-    numb: 3,
     question:
       "Quel numéro d'urgence devez-vous composer pour joindre les pompiers ?",
-    answer: "18",
-    options: ["15", "16", "18", "112"],
-  },
-
-  {
-    numb: 4,
-    question: "À partir de quel âge peut-on obtenir le permis B ?",
-    answer: "18 ans",
-    options: ["15 ans", "16 ans", "18 ans", "21 ans"],
-  },
-
-  {
-    numb: 5,
-    question:
-      "Quelle est la vitesse maximale de circulation sur une autoroute ?",
-    answer: "130 km/h",
-    options: ["90 km/h", "110 km/h", "130 km/h", "140 km/h"],
-  },
-
-  {
-    numb: 6,
-    question: "De quel fruit l'Eureka est-il une variété ?",
-    answer: "Le citron",
-    options: ["Le cassis", "Le citron", "La pastèque", "Le raisin"],
-  },
-
-  {
-    numb: 7,
-    question: "Que fête-t-on le 1er mai ?",
-    answer: "La fête du travail",
-    options: [
-      "La fête du printemps",
-      "La fête des mères",
-      "La fête du travail",
-      "La fête du Beaujolais",
+    answer: [
+      { text: "15", correct: false },
+      { text: "16", correct: false },
+      { text: "18", correct: true },
+      { text: "112", correct: false },
     ],
   },
 
   {
-    numb: 8,
-    question: " Quel arbre produit la noix de pécan ?",
-    answer: "Le pacanier",
-    options: ["Le macadamia", "Le noisetier", "Le pacanier", "Le pécunier"],
+    question:
+      "Quelle est la vitesse maximale de circulation sur une autoroute ?",
+    answer: [
+      { text: "90 km/h", correct: false },
+      { text: "110 km/h", correct: false },
+      { text: "120 km/h", correct: false },
+      { text: "130 km/h", correct: true },
+    ],
   },
 
   {
-    numb: 9,
+    question: "De quel fruit l'Eureka est-il une variété ?",
+    answer: [
+      { text: "Le citron", correct: true },
+      { text: "Le cassis", correct: false },
+      { text: "La pastèque", correct: false },
+      { text: "Le raisin", correct: false },
+    ],
+  },
+
+  {
+    question: "Que fête-t-on le 1er mai ?",
+    answer: [
+      { text: "La fête du printemps", correct: false },
+      { text: "La fête des mères", correct: false },
+      { text: "La fête du Beaujolais", correct: false },
+      { text: "La fête du travail", correct: true },
+    ],
+  },
+
+  {
+    question: "Quel arbre produit la noix de pécan ?",
+    answer: [
+      { text: "Le macadamia", correct: false },
+      { text: "Le noisetier", correct: false },
+      { text: "Le pécunier", correct: false },
+      { text: "Le pacanier", correct: true },
+    ],
+  },
+
+  {
     question: "Qui est l’inséparable compagnon de Titi ?",
-    answer: "Grosminet",
-    options: ["Toto", "Grosminet", "Tata", "Jerry"],
+    answer: [
+      { text: "Toto", correct: false },
+      { text: "Grosminet", correct: true },
+      { text: "Tata", correct: false },
+      { text: "Jerry", correct: false },
+    ],
   },
 
   {
-    numb: 10,
     question:
       "Quelle est la seule région dépassant les 10 millions d’habitants ?",
-    answer: "Île-de-France",
-    options: [
-      "Auvergne-Rhône-Alpes",
-      "Aquitaine-Limousin-Poitou-Charentes",
-      "Île-de-France",
-      "Provence-Alpes-Côte d'Azur",
+    answer: [
+      { text: "Île-de-France", correct: true },
+      { text: "Guadeloupe", correct: false },
+      { text: "Guyane", correct: false },
+      { text: "Provence-Alpes-Côte d'Azur", correct: false },
     ],
   },
 ];
 
-let questionsSport = [
+const questionsSport = [
   {
-    numb: 1,
     question: "Quel est le nom du sélectionneur des Bleus en 2016 ?",
-    answer: "Laurent Blanc",
-    options: [
-      "Michel Platini",
-      "Didier Deschamps",
-      "Laurent Blanc",
-      "Claude Puel",
+    answer: [
+      { text: "Laurent Blanc", correct: true },
+      { text: "Michel Platini", correct: false },
+      { text: "Didier Deschamps", correct: false },
+      { text: "Claude Puel", correct: false },
     ],
   },
 
   {
-    numb: 2,
     question: "Quel footballeur a été élu Ballon d’or 2015 ?",
-    answer: "Lionel Messi",
-    options: ["Cristiano Ronaldo", "Neymar", "Lionel Messi", "Thomas Müller"],
-  },
-
-  {
-    numb: 3,
-    question:
-      "Dans quel club de NBA évolue le basketteur Kobe Bryant depuis 1996 ?",
-    answer: "Los Angeles Lakers",
-    options: [
-      "San Antonio Spurs",
-      "Orlando Magic",
-      "Utah Jazz",
-      "Los Angeles Lakers",
+    answer: [
+      { text: "Cristiano Ronaldo", correct: false },
+      { text: "Neymar", correct: false },
+      { text: "Lionel Messi", correct: true },
+      { text: "Thomas Müller", correct: false },
     ],
   },
 
   {
-    numb: 4,
-    question: "Dans quelle équipe de NBA joue Joachim Noah ?",
-    answer: "Chicago Bullss",
-    options: [
-      "Los Angeles Lakers",
-      "Chicago Bulls",
-      "San Antonio Spurs",
-      "New York Knicks",
-    ],
-  },
-
-  {
-    numb: 5,
     question:
       "Quelle est la nationalité d’Usein Bolt, recordman du monde sur 100 mètres ?",
-    answer: "Jamaïcaine",
-    options: ["Nigériane", "Américaine", "Jamaïcaine", "Trinidadienne"],
+    answer: [
+      { text: "Nigériane", correct: false },
+      { text: "Jamaïcaine", correct: true },
+      { text: "Américaine", correct: false },
+      { text: "Trinidadienne", correct: false },
+    ],
   },
 
   {
-    numb: 6,
-    question: " De quelle forme est un ballon de rugby ?",
-    answer: "Ovale",
-    options: ["Ovale", "Rond", "Triangulaire", "Carré"],
+    question: "De quelle forme est un ballon de rugby ?",
+    answer: [
+      { text: "Ovale", correct: true },
+      { text: "Rond", correct: false },
+      { text: "Triangulaire", correct: false },
+      { text: "Carré", correct: false },
+    ],
   },
 
   {
-    numb: 7,
     question: "Sur quelle surface joue-t-on au billard ?",
-    answer: "Une table",
-    options: ["Une arène", "Une table", "Une piste", "Une patinoire"],
+    answer: [
+      { text: "Une table", correct: true },
+      { text: "Une arène", correct: false },
+      { text: "Une piste", correct: false },
+      { text: "Une patinoire", correct: false },
+    ],
   },
 
   {
-    numb: 8,
     question: "Quel est le sport de prédilection de Raphael Nadal ?",
-    answer: "Tennis",
-    options: ["Basket-ball", "Hand-ball", "Cyclisme", "Tennis"],
+    answer: [
+      { text: "Basket-ball", correct: false },
+      { text: "Hand-ball", correct: false },
+      { text: "Cyclisme", correct: false },
+      { text: "Tennis", correct: true },
+    ],
   },
 
   {
-    numb: 9,
     question: "Quel sport compte le plus grand nombre de licenciés en France ?",
-    answer: "Le football",
-    options: ["Le football", "La natation", "Le badminton", "Le tennis"],
+    answer: [
+      { text: "Le football", correct: true },
+      { text: "La natation", correct: false },
+      { text: "Le badminton", correct: false },
+      { text: "Le tennis", correct: false },
+    ],
   },
 
   {
-    numb: 10,
     question: "Où se courent les 24 Heures du Mans ?",
-    answer: "Au Mans",
-    options: ["A Daytona", "A Imola", "Au Mans", "A Dubaï"],
+    answer: [
+      { text: "Au Mans", correct: true },
+      { text: "A Daytona", correct: false },
+      { text: "A Imola", correct: false },
+      { text: "A Dubaï", correct: false },
+    ],
   },
 ];
