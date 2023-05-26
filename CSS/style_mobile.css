@@ -350,6 +350,7 @@ h1 {
   margin-bottom: 2rem;
   text-align: center;
   justify-content: center;
+  background-color: var(--header-color);
 }
 
 .score-title {
