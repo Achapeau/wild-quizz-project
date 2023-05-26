@@ -20,6 +20,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.6s ease-out;
 }
 a {
   text-decoration: none;
@@ -241,6 +242,7 @@ footer {
   color: var(--text-font-color);
   cursor: pointer;
   transition: all 0.5s ease-out;
+  font-size: 2 * var(--inbox-font-size);
 }
 .answer-btn:disabled {
   cursor: initial;
@@ -259,22 +261,31 @@ footer {
   border-radius: 35px;
   font-size: var(--inbox-text-font-size);
   min-height: fit-content;
+  
 }
 
-.correct {
-  background: green;
-}
-
-.incorrect {
-  background: red;
-}
-
-.answers button:hover:not([disabled]) {
+#next-btn {
   background: linear-gradient(#922765, #4f174d, #1c061b, #eb2364);
   color: var(--text-font-color);
   cursor: pointer;
   transition: all 0.5s ease-out;
+  align-self: center;
+  width: 50vw;
+  height: 5vh;
+  font-size: var(--text-font-color);
+  border-radius: 30px;
 }
+
+.correct {
+  background: linear-gradient(#0e864cdb, #a2de53e1, #7fd632dd, #049f35d3);
+  color: black;
+}
+
+.incorrect {
+  background: linear-gradient(#6a0303db, #de5353e1, #d63232dd, #9f0404d3);
+  color : black;
+}
+
 .answers button:disabled {
   cursor: no-drop;
 }
@@ -491,23 +502,32 @@ h3 {
 .main-category .btn-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  align-items: center;
-  justify-items: center;
-  margin-top: 20px;
+  /* gap: 20px; */
+   align-items: center; 
+  justify-items: center; 
+  /* margin-top: 20px; */
 }
-
 .main-category .btn-category {
-  padding: 10px 20px;
   background-color: #f56b13;
   border: solid 2px darkgrey;
   border-radius: 5px;
   width: 150px;
   height: 150px;
-  margin-top: 40px;
+  margin : 10vh 10vw;
+  transition: all 0.7s ease-out;
+  color: rgba(231, 213, 251, 0.934);
+
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.btn-category:hover {
   cursor: pointer;
-  color: red;
-  text-align: end;
+  width: 250px;
+  height: 250px;
+  font-size: calc(1.4 * var(--title-font-size));
+
+
 }
 
 #btn-cinema {
@@ -515,6 +535,7 @@ h3 {
   background-size: cover;
   background-position: center;
   opacity: 80%;
+  text-align: end;
 }
 
 #btn-sport {
@@ -522,16 +543,19 @@ h3 {
   background-size: cover;
   background-position: center;
   opacity: 80%;
+  text-align: end;
 }
 #btn-culture {
   background-image: url(../img/culture.jpg);
   background-size: cover;
   background-position: center;
   opacity: 80%;
+  text-align: start;
 }
 #btn-awards {
   background-image: url(../img/awards.jpg);
   background-size: cover;
   background-position: center;
   opacity: 80%;
+  text-align: start;
 }

@@ -244,10 +244,10 @@ const questionsCinema = [
     question:
       "Quel est le nom du petit monstre gentil, héros du film Les Gremlins ?",
     answer: [
-      { text: "Guizmo", correct: false },
+      { text: "Guizmo", correct: true },
       { text: "Willow", correct: false },
       { text: "Dobby", correct: false },
-      { text: "Tobby", correct: true },
+      { text: "Tobby", correct: false },
     ],
   },
 

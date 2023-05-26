@@ -243,10 +243,10 @@ const questionsCinema = [
     question:
       "Quel est le nom du petit monstre gentil, héros du film Les Gremlins ?",
     answer: [
-      { text: "Guizmo", correct: false },
+      { text: "Guizmo", correct: true },
       { text: "Willow", correct: false },
       { text: "Dobby", correct: false },
-      { text: "Tobby", correct: true },
+      { text: "Tobby", correct: false },
     ],
   },
 
@@ -254,8 +254,8 @@ const questionsCinema = [
     question:
       "Quelle actrice incarne Mary Jane Watson dans la trilogie Spider-Man ?",
     answer: [
-      { text: "Kirsten Dunst", correct: true },
       { text: "Emma Stone", correct: false },
+      { text: "Kirsten Dunst", correct: true },
       { text: "Zendaya", correct: false },
       { text: "Cate Blanchett", correct: false },
     ],
@@ -475,8 +475,11 @@ let score = 0;
 //Déclaration variable qui indique quel est le tableau du thème choisi
 let questionArray = [];
 
-let chosenTheme = localStorage.getItem(chosenTheme);
-// let chosenTheme = "sport";
+//Déclaration de la variable chosenTheme, qui récupère dans le local storage le thème choisi par l'utilisateur
+let chosenTheme = localStorage.getItem("chosenTheme");
+
+// Utilisation d'une boucle switch pour comparer la chaîne correspondant à chosenTheme
+// Et assigner à questionArray le tableau contenant les questions/réponses du thème choisi
 switch (chosenTheme) {
   case "darwin":
     questionArray = questionsDarwin;
@@ -494,16 +497,17 @@ switch (chosenTheme) {
     questionArray = questionsDarwin;
     break;
 }
-console.log(questionArray);
+
 // Déclaration de la fonction startQuiz qui va set question index et score à zero, et appeler showQuestion qui affiche la question suivante
 function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
-  // En cas de bouton pour skip, affichage de ce bouton avec pour contenu "next"
-  nextButton.innerHTML = "Next";
   //   Puis appelle la fonction pour afficher la prochaine question
   showQuestion();
 }
+
+// Appel de la fonction startQuiz , qui reset les index et appelle la fonction showQuestion
+startQuiz();
 
 // Déclaration de la fonction showQuestion, qui affiche la question contenue dans le tableau "questions"  à l'index actuel
 function showQuestion() {
@@ -516,30 +520,30 @@ function showQuestion() {
   // Affiche le numéro de la question dans l'id question, suivi de la question
   questionElement.innerHTML = `Question  ${questionNo} : ${currentQuestion.question}`;
 
-  // Affichage des réponses dans chaque bouton "answer",
-  //   dans notre cas les classes HTML des boutons réponse ont actuellement tous des classes différentes,
-  // il faut les unifier (par exemple ici, ils ont tous la classe "Btn") pour utiliser forEach
+  // Pour chaque réponse présente à l'index actuel du tableau de questions :
+  // Création DOM d'un bouton, dans lequel on affiche la première réponse (sur les 4 contenues à l'index actuel)
+  // On lui attribue la classe answer-btn, pour pouvoir ensuite le greffer en child de l'id answers
   currentQuestion.answer.forEach((answer) => {
-    const button = document.createElement("button");
-    button.innerHTML = answer.text;
-    button.classList.add("answer-btn");
-    answerButtons.appendChild(button);
-    // Ajout de true/false au dataset en cas de bonne/mauvaise réponse
+    const aButton = document.createElement("Button");
+    aButton.innerHTML = answer.text;
+    aButton.classList.add("answer-btn");
+    answerButtons.appendChild(aButton);
+    // Si le bouton créé possède la propriété correct = true, lui attribue par DOM un attribut dataset correct
     if (answer.correct) {
-      button.dataset.correct = answer.correct;
+      aButton.dataset.correct = answer.correct;
+      // Cette fonction se répète pour chacune des 4 réponses.
     }
     // Quand clic sur une réponse, sélection de la valeur answer correspondante grâce à la fonction selectAnswer
-    button.addEventListener("click", selectAnswer);
+    aButton.addEventListener("click", selectAnswer);
   });
-  // En cas de bouton pour skip, le fait apparaître
-  nextButton.style.display = "block";
 }
 
 // Déclaration de la fonction resetState qui efface les réponses précédentes
 function resetState() {
-  // Si il y a un bouton pour skip, il est caché
+  // Le bouton pour skip est caché en invoquant la fonction DOM qui lui applique le statut CSS "ne pas afficher"
   nextButton.style.display = "none";
-  // nextButton.disabled = true;
+  // Puis il est désactivé en lui appliquant le statut disabled
+  nextButton.disabled = true;
   // Supprimer les boutons déjà présents (avec le texte par défaut ou celui de la question précédente )
   while (answerButtons.firstChild) {
     answerButtons.removeChild(answerButtons.firstChild);
@@ -550,43 +554,58 @@ function resetState() {
 function selectAnswer(e) {
   // Ajout du bouton sur lequel on a cliqué dans une variable selectedBtn
   const selectedBtn = e.target;
-  // vérification si dataset = true, donc si réponse correcte, ajout de la classe correct au selectedBtn, sinon ajout de la classe incorrect
+  // vérification si ce bouton possède l'attribut dataset correct = true, donc si réponse correcte,
+  //  ajout de la classe correct au selectedBtn, sinon ajout de la classe incorrect
   const isCorrect = selectedBtn.dataset.correct === "true";
-  console.log(isCorrect);
-  // Permet d'appliquer les couleurs verte et rouge sur les bontons réponses
   if (isCorrect) {
     selectedBtn.classList.add("correct");
     // Et incrémentation du score
     score++;
+    // Enregistrement du score dans le local storage à la clé "score", (et remplace éventuellement une autre valeur précédente)
     localStorage.setItem("score", score);
   } else {
     selectedBtn.classList.add("incorrect");
   }
-  // Après le clic sur une réponse, colore la bonne réponse en vert, et désactive les boutons réponse
-  Array.from(answerButtons.children).forEach((button) => {
-    if (button.dataset.correct === "true") {
-      button.classList.add("correct");
+
+  // Création d'un tableau qui contient chaque child de la classe answers,
+  // Pour pouvoir avec forEach vérifier si le dataset de chaque bouton est = true,
+  // Cette fonction permet d'aller donner la classe correct au bouton contenant la bonne réponse,
+  // Dans le cas où l'utilisateur a cliqué sur une réponse incorrecte
+  // Si l'utilisateur a cliqué sur la bonne réponse, la classe était et restera correct
+  Array.from(answerButtons.children).forEach((aButton) => {
+    if (aButton.dataset.correct === "true") {
+      aButton.classList.add("correct");
     }
-    button.disabled = true;
+    // Ensuite, désactive les boutons réponse
+    aButton.disabled = true;
+    nextButton.style.display = "block";
+    nextButton.disabled = false;
   });
 }
 // Pour que les couleurs s'appliquent, il faut dans le fichier css : ".correct{background: green;}" et ".incorrect{background: red}"
 // Pour que le highlight des boutons se désactive, il faut dans le fichier css: ".answer: hover: not([disabled]){background: #222; color: #fff;"
 // et : ".answer: disabled{cursor:no-drop;}"
 
-// Déclaration de la fonction showScore, qui affiche le score et affiche un bouton replay
-//  Dans notre cas il faudra y inclure une transition vers la page result et
-// un enregistrement du score dans le local storage.
+// Déclaration de la fonction showScore, qui appelle la fonction resetState
+// Déclaration de la constante nextButton qui crée par DOM un bouton,
+// Lui attribue l'id next-btn, le place en child de la section answers,
+// Et on lui injecte un message
 function showScore() {
   resetState();
+  nextButton.createElement = "Button";
+  const scoreBtn = document.createElement("Button");
+  scoreBtn.setAttribute("id", "next-btn");
+  scoreBtn.textContent = "Par ici pour les résultats!";
+  answerButtons.appendChild(scoreBtn);
+  answerButtons.style.display = "flex";
+  answerButtons.style.alignSelf = "center";
+  questionElement.removeChild(questionElement.firstChild);
+  questionElement.textContent = "Bien joué !";
 
-  // questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
-  // nextButton.innerHTML = "Play again";
-  nextButton.addEventListener("click", function () {
+  // Lors du clic sur ce bouton, l'utilisateur est redirigé vers la page Résultats
+  answerButtons.addEventListener("click", function () {
     document.location.href = "results.html";
   });
-  nextButton.textContent = "Par ici pour les résultats!";
-  nextButton.style.display = "block";
 }
 
 // Déclaration fonction qui incrémente l'index des questions, et appelle la fonction showQuestion si l'index n'est pas à la fin
@@ -603,12 +622,10 @@ function handleNextButton() {
 nextButton.addEventListener("click", () => {
   if (currentQuestionIndex < questionArray.length) {
     handleNextButton();
+    nextButton.style.display = "none";
   } else {
     //Si la question actuelle est la dernière
-    console.log(`score final: ${score}`);
+
     startQuiz();
   }
 });
-
-// Appel de la fonction startQuiz , qui reset les index et appelle la fonction showQuestion
-startQuiz();
