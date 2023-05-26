@@ -655,6 +655,8 @@ function showScore() {
   answerButtons.style.alignSelf = "center";
   questionElement.removeChild(questionElement.firstChild);
   questionElement.textContent = "Bien joué !";
+  timerElement.style.display = "none";
+  timerTxt.style.display = "none";
 
   // Lors du clic sur ce bouton, l'utilisateur est redirigé vers la page Résultats
   answerButtons.addEventListener("click", function () {
@@ -685,6 +687,7 @@ nextButton.addEventListener("click", () => {
 });
 
 const timerElement = document.querySelector(".timerSec");
+const timerTxt = document.querySelector(".timeLeftTxt");
 
 // Attribution d'une valeur et d'un texte à notre classe timer
 let time = 10;
@@ -694,7 +697,9 @@ timerElement.innerHTML = time;
 function decreaseTimer() {
   timerElement.innerHTML = time;
   if (time <= 0) {
-    timerElement.innerHTML = 0;
+    handleNextButton();
+    resetTimer();
+    // Dès que le temps sera écoulé, la question suivante apparait et le timer se reset
   } else {
     time--;
   }
@@ -704,4 +709,4 @@ function resetTimer() {
 }
 
 setInterval(decreaseTimer, 1000);
-nextButton.addEventListener("click", resetTimer);
+nextButton.addEventListener("click", resetTimer); // Dès qu'on appuis sur le bouton next, le timer se reset
