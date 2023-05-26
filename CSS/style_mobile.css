@@ -112,10 +112,17 @@ header {
   justify-content: center;
   padding-bottom: 20px;
 }
-.btn-container button {
+.btn-container a {
   font-size: var(--inbox-text-font-size);
   font-weight: 500;
+    -webkit-appearance: button;
+    
+    appearance: button;
+
+    
+    color: initial;
 }
+
 
 .btn-start {
   padding: 10px 20px;
