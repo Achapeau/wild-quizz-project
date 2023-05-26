@@ -242,7 +242,7 @@ footer {
   color: var(--text-font-color);
   cursor: pointer;
   transition: all 0.5s ease-out;
-  font-size: 2 * var(--inbox-font-size);
+  
 }
 .answer-btn:disabled {
   cursor: initial;
@@ -531,9 +531,8 @@ h3 {
 
 .btn-category:hover {
   cursor: pointer;
-  width: 250px;
-  height: 250px;
-  font-size: calc(1.4 * var(--title-font-size));
+ 
+  
 
 
 }

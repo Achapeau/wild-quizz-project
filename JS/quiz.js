@@ -175,6 +175,29 @@ const questionsDarwin = [
       },
     ],
   },
+
+  {
+    question:
+      "Darren, 33 ans a été retrouvé mort, seul dans sa maison, mystérieusement poignardé, sans trace d'effraction. La cause en est :",
+    answer: [
+      {
+        text: "Il a glissé et est tombé sur sa collection de soldats de plomb.",
+        correct: false,
+      },
+      {
+        text: `Sous l'emprise de narcotiques, il a voulu "libérer son âme".`,
+        correct: false,
+      },
+      {
+        text: "Il a voulu tester si sa nouvelle veste est réellement à l'épreuve des perforations",
+        correct: true,
+      },
+      {
+        text: "Il a voulu faire la cuisine pour sa femme et le couteau a glissé sur l'os d'un gigot.",
+        correct: false,
+      },
+    ],
+  },
 ];
 
 const questionsCinema = [
@@ -209,7 +232,8 @@ const questionsCinema = [
   },
 
   {
-    question: "Quel acteur incarne Scarface dans le film de Brian de Palma ?",
+    question:
+      "Quel acteur incarne Tony Montana dans le film de Brian de Palma ?",
     answer: [
       { text: "Robert de Niro", correct: false },
       { text: "Martin Sheen", correct: false },
@@ -254,8 +278,8 @@ const questionsCinema = [
     question:
       "Quelle actrice incarne Mary Jane Watson dans la trilogie Spider-Man ?",
     answer: [
-      { text: "Emma Stone", correct: false },
       { text: "Kirsten Dunst", correct: true },
+      { text: "Emma Stone", correct: false },
       { text: "Zendaya", correct: false },
       { text: "Cate Blanchett", correct: false },
     ],
@@ -305,28 +329,6 @@ const questionsCultureG = [
   },
 
   {
-    question:
-      "Quel numéro d'urgence devez-vous composer pour joindre les pompiers ?",
-    answer: [
-      { text: "15", correct: false },
-      { text: "16", correct: false },
-      { text: "18", correct: true },
-      { text: "112", correct: false },
-    ],
-  },
-
-  {
-    question:
-      "Quelle est la vitesse maximale de circulation sur une autoroute ?",
-    answer: [
-      { text: "90 km/h", correct: false },
-      { text: "110 km/h", correct: false },
-      { text: "120 km/h", correct: false },
-      { text: "130 km/h", correct: true },
-    ],
-  },
-
-  {
     question: "De quel fruit l'Eureka est-il une variété ?",
     answer: [
       { text: "Le citron", correct: true },
@@ -336,6 +338,15 @@ const questionsCultureG = [
     ],
   },
 
+  {
+    question: "Quel arbre produit la noix de pécan ?",
+    answer: [
+      { text: "Le macadamia", correct: false },
+      { text: "Le noisetier", correct: false },
+      { text: "Le pécunier", correct: false },
+      { text: "Le pacanier", correct: true },
+    ],
+  },
   {
     question: "Que fête-t-on le 1er mai ?",
     answer: [
@@ -347,12 +358,13 @@ const questionsCultureG = [
   },
 
   {
-    question: "Quel arbre produit la noix de pécan ?",
+    question:
+      "Parmi ces animaux, lequel est considéré comme un fossile vivant ?",
     answer: [
-      { text: "Le macadamia", correct: false },
-      { text: "Le noisetier", correct: false },
-      { text: "Le pécunier", correct: false },
-      { text: "Le pacanier", correct: true },
+      { text: "Le crocodile", correct: false },
+      { text: "L'acanthostega", correct: false },
+      { text: "La tortue Luth", correct: false },
+      { text: "Le cœlacanthe", correct: true },
     ],
   },
 
@@ -376,6 +388,28 @@ const questionsCultureG = [
       { text: "Provence-Alpes-Côte d'Azur", correct: false },
     ],
   },
+
+  {
+    question:
+      "Quelle est la vitesse maximale de circulation sur une autoroute ?",
+    answer: [
+      { text: "90 km/h", correct: false },
+      { text: "110 km/h", correct: false },
+      { text: "120 km/h", correct: false },
+      { text: "130 km/h", correct: true },
+    ],
+  },
+
+  {
+    question:
+      "Quel numéro d'urgence devez-vous composer pour joindre les pompiers ?",
+    answer: [
+      { text: "15", correct: false },
+      { text: "16", correct: false },
+      { text: "18", correct: true },
+      { text: "112", correct: false },
+    ],
+  },
 ];
 
 const questionsSport = [
@@ -390,12 +424,13 @@ const questionsSport = [
   },
 
   {
-    question: "Quel footballeur a été élu Ballon d’or 2015 ?",
+    question:
+      "Quelle est la marque automobile qui compte le plus de victoires dans les sports auto ?",
     answer: [
-      { text: "Cristiano Ronaldo", correct: false },
-      { text: "Neymar", correct: false },
-      { text: "Lionel Messi", correct: true },
-      { text: "Thomas Müller", correct: false },
+      { text: "Ferrari", correct: false },
+      { text: "Renault", correct: false },
+      { text: "Lotus", correct: false },
+      { text: "Porsche", correct: true },
     ],
   },
 
@@ -439,6 +474,16 @@ const questionsSport = [
       { text: "Tennis", correct: true },
     ],
   },
+  {
+    question:
+      "En 1985, quel est le dernier vainqueur français du Tour De France ?",
+    answer: [
+      { text: "Raymont Poulidor", correct: false },
+      { text: "Bernard Hinault", correct: true },
+      { text: "Julian Alaphilippe", correct: false },
+      { text: "Laurent Jalabert", correct: false },
+    ],
+  },
 
   {
     question: "Quel sport compte le plus grand nombre de licenciés en France ?",
@@ -447,6 +492,15 @@ const questionsSport = [
       { text: "La natation", correct: false },
       { text: "Le badminton", correct: false },
       { text: "Le tennis", correct: false },
+    ],
+  },
+  {
+    question: "Quel footballeur a été élu Ballon d’or 2015 ?",
+    answer: [
+      { text: "Cristiano Ronaldo", correct: false },
+      { text: "Neymar", correct: false },
+      { text: "Lionel Messi", correct: true },
+      { text: "Thomas Müller", correct: false },
     ],
   },
 
@@ -629,3 +683,21 @@ nextButton.addEventListener("click", () => {
     startQuiz();
   }
 });
+
+const timerElement = document.querySelector(".timerSec");
+
+// Attribution d'une valeur et d'un texte à notre classe timer
+let time = 10;
+timerElement.innerHTML = time;
+
+// On crée une fonction qui va diminuer la valeur du timer de 1 tant qu'il n'es pas à zéro.
+function decreaseTimer() {
+  timerElement.innerHTML = time;
+  if (time <= 0) {
+    timerElement.innerHTML = 0;
+  } else {
+    time--;
+  }
+}
+
+setInterval(decreaseTimer, 1000);
