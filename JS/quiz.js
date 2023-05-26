@@ -699,5 +699,9 @@ function decreaseTimer() {
     time--;
   }
 }
+function resetTimer() {
+  time = 10; // Réinitialisation de la valeur du timer à sa valeur initiale
+}
 
 setInterval(decreaseTimer, 1000);
+nextButton.addEventListener("click", resetTimer);

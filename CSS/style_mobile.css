@@ -515,6 +515,7 @@ h3 {
   justify-items: center; 
   /* margin-top: 20px; */
 }
+
 .main-category .btn-category {
   background-color: #f56b13;
   border: solid 2px darkgrey;
@@ -566,3 +567,4 @@ h3 {
   opacity: 80%;
   text-align: start;
 }
+
