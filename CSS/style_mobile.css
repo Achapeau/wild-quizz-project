@@ -303,6 +303,14 @@ footer {
   min-height: fit-content;
 }
 
+.new-game:hover {
+  transform: scale3d(1.2);
+  color: #020202;
+  background-color: #f2f2f2;
+  cursor: pointer;
+  transition: 700ms;
+}
+
 button .logo {
   background-image: url("img/logo.png");
 }
