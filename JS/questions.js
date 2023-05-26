@@ -175,6 +175,29 @@ const questionsDarwin = [
       },
     ],
   },
+
+  {
+    question:
+      "Darren, 33 ans a été retrouvé mort, seul dans sa maison, mystérieusement poignardé, sans trace d'effraction. La cause en est :",
+    answer: [
+      {
+        text: "Il a glissé et est tombé sur sa collection de soldats de plomb.",
+        correct: false,
+      },
+      {
+        text: `Sous l'emprise de narcotiques, il a voulu "libérer son âme".`,
+        correct: false,
+      },
+      {
+        text: "Il a voulu tester si sa nouvelle veste est réellement à l'épreuve des perforations",
+        correct: true,
+      },
+      {
+        text: "Il a voulu faire la cuisine pour sa femme et le couteau a glissé sur l'os d'un gigot.",
+        correct: false,
+      },
+    ],
+  },
 ];
 
 const questionsCinema = [
