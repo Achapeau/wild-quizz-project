@@ -629,3 +629,21 @@ nextButton.addEventListener("click", () => {
     startQuiz();
   }
 });
+
+const timerElement = document.querySelector(".timerSec");
+
+// Attribution d'une valeur et d'un texte à notre classe timer
+let time = 10;
+timerElement.innerHTML = time;
+
+// On crée une fonction qui va diminuer la valeur du timer de 1 tant qu'il n'es pas à zéro.
+function decreaseTimer() {
+  timerElement.innerHTML = time;
+  if (time <= 0) {
+    timerElement.innerHTML = 0;
+  } else {
+    time--;
+  }
+}
+
+setInterval(decreaseTimer, 1000);
