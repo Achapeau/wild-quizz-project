@@ -29,7 +29,25 @@ if (valueResults === undefined) {
   comments.textContent =
     "A tout le temps de bons résultats, est soupçonné de cheater";
 }
-// valueResults = 10;
+function initStorage() {
+  let init = "";
+  if (localStorage.score1 === undefined) {
+    localStorage.setItem("score1", init);
+  }
+  if (localStorage.score2 === undefined) {
+    localStorage.setItem("score2", init);
+  }
+  if (localStorage.score3 === undefined) {
+    localStorage.setItem("score3", init);
+  }
+  if (localStorage.score4 === undefined) {
+    localStorage.setItem("score4", init);
+  }
+  if (localStorage.score5 === undefined) {
+    localStorage.setItem("score5", init);
+  }
+}
+
 /* Génération d'un tableau des scores */
 localStorage.setItem("score5", localStorage.score4);
 localStorage.setItem("score4", localStorage.score3);
@@ -90,4 +108,7 @@ function createArray(position, score) {
 
 for (let i = 0; i < scoreArray.length; i++) {
   createArray(scoreArray[i].id, scoreArray[i].resultat);
+  // if (`${scoreArray.resultat}` === undefined) {
+  // scoreSave.textContent = ``;
+  // }
 }
