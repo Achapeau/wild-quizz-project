@@ -690,7 +690,7 @@ const timerElement = document.querySelector(".timerSec");
 const timerTxt = document.querySelector(".timeLeftTxt");
 
 // Attribution d'une valeur et d'un texte à notre classe timer
-let time = 10;
+let time = 20;
 timerElement.innerHTML = time;
 
 // On crée une fonction qui va diminuer la valeur du timer de 1 tant qu'il n'es pas à zéro.
@@ -705,7 +705,7 @@ function decreaseTimer() {
   }
 }
 function resetTimer() {
-  time = 10; // Réinitialisation de la valeur du timer à sa valeur initiale
+  time = 20; // Réinitialisation de la valeur du timer à sa valeur initiale
 }
 
 setInterval(decreaseTimer, 1000);
