@@ -699,6 +699,7 @@ function decreaseTimer() {
   if (time <= 0) {
     handleNextButton();
     resetTimer();
+    // Dès que le temps sera écoulé, la question suivante apparait et le timer se reset
   } else {
     time--;
   }
@@ -708,4 +709,4 @@ function resetTimer() {
 }
 
 setInterval(decreaseTimer, 1000);
-nextButton.addEventListener("click", resetTimer);
+nextButton.addEventListener("click", resetTimer); // Dès qu'on appuis sur le bouton next, le timer se reset
